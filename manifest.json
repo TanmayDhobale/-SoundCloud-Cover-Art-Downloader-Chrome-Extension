@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Soundcloud Cover Art Extension",
+  "description": "Easily download any Cover Art from Soundcloud",
+  "version": "1.0",
+  "action": {
+    "default_popup": "menu.html",
+    "default_icon": "download.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.soundcloud.com/*"],
+      "css": ["download-button.css"],
+      "js": ["download-button.js"]
+    }
+  ],
+  "permissions": ["webNavigation", "tabs", "downloads", "<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
